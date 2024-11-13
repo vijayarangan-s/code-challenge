@@ -1,29 +1,14 @@
-# Code Challenge:
-
-## Introduction:
-Welcome to the React Developer Technical Assessment! This test is designed to evaluate your proficiency in building React applications using a modern stack, including Redux Toolkit, Vite, React Router and TurboRepo. We have prepared a set of tasks and questions that cover a spectrum of skills, ranging from fundamental concepts to more advanced topics.
-
-### Tasks: 
-Complete the provided tasks to demonstrate your ability to work with React, Redux Toolkit, Vite, and TurboRepo. Adjust the complexity based on your experience level.
-
-### Questions:
-Answer the questions to showcase your understanding of the underlying concepts and best practices associated with the technologies in use.
-
-### Time Limit:
-This assessment is designed to take approximately 1 hour to complete. Please manage your time effectively.
-
-### Setup the reporsitory:
-Make sure you have pnpm installed<br>
-Install dependencies with `pnpm`<br>
-Run the project with `turbo run dev` or `pnpm run dev`
-
-### prerequisite:
-Start the test by Forking this repository, and complete the following tasks:<br>
-
+# Task Completed
+---
 ## Task 1:
 Assignment: Use the `api` found in `App.tsx` to make a request and fetch a list of all Pokémon.<br>
-Question 1: How did you manage to fetch the list and what tool did you use?<br>
-Question 2: What steps would you take to future improve this?<br>
+### Question 1: How did you manage to fetch the list and what tool did you use?<br>
+### Answer:
+> Tool Used: I used the fetch API to make an HTTP GET request to retrieve the list of Pokémon. The fetch API is a native JavaScript API for making network requests and is widely supported and easy to use for basic API calls.
+
+### Question 2: What steps would you take to future improve this?<br>
+### Answer:
+> I create a custom hook with handling api calls, Pagination,caching mechanisms like state management with reux toolkit and server side rendering.
 
 commit the code as `task-1`<br>
 
@@ -50,12 +35,32 @@ Assignment: Create button for each pokémon where an Action will be dispatched t
 Question 6: How can you verify the action has been dispatched?
 
 ## Task 6:
-Question 7: explain the use of `useEffect` hook in React
-Question 8: What is A High Order Component?
-Question 9: What use cases would a HOC be usefull?
-Question 10: What does it indicate when a component is prefixed with `use` and `with`
-Question 11: What is a Generic type in typescript?
-Question 12: Whats the difference between a controlled and uncontrolled input in React?
+### Question 7: explain the use of `useEffect` hook in React<br>
+### Answer:
+> The useEffect hook in React is used to perform side effects in functional components. It runs after the component renders and can be used for tasks like data fetching, subscriptions, or manually modifying the DOM.
+
+### Question 8: What is A High Order Component?<br>
+### Answer:
+> A Higher Order Component is a function that takes a component and returns a new component with additional functionality or props. It’s used for code reuse and logic abstraction without modifying the original component directly.
+
+### Question 9: What use cases would a HOC be usefull?<br>
+### Answer:
+> **Code Reusability:** When multiple components need the same functionality (e.g., authentication, logging, data fetching).
+> **Cross-Cutting Concerns:** When you need to add logic like error handling or lifecycle methods to multiple components.
+
+### Question 10: What does it indicate when a component is prefixed with `use` and `with`
+### Answer:
+> **use Prefix:** In React, when a component or function is prefixed with use, it indicates a custom hook. Custom hooks are functions that encapsulate stateful logic and side effects to be reused across components. They follow the hook naming  convention, which starts with use.<br>
+**with Prefix:** When a component is prefixed with with, it usually indicates a Higher-Order Component (HOC). An HOC is a function that takes a component and returns a new component with additional props or functionality, without modifying the original component directly.
+
+### Question 11: What is a Generic type in typescript?
+### Answer:
+> A Generic type allows you to define a function, class, or interface that works with any data type. It provides type safety without restricting the specific type, making code more reusable.
+
+### Question 12: Whats the difference between a controlled and uncontrolled input in React?
+### Answer:
+> **Controlled Input:** The form element’s value is managed by React state (value prop)<br>
+**Uncontrolled Input:** The form element’s value is managed by the DOM, not React state. You use refs to access the value.
 
 
 
