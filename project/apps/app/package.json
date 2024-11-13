@@ -10,9 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "ui": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.2",
+    "redux-store": "workspace:*",
+    "ui": "workspace:*",
+    "shared-hooks": "workspace:*"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",

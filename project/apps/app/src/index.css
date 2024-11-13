@@ -1,0 +1,46 @@
+.head-container{
+    display: flex;
+    gap: 10px;
+}
+
+/* General Table Styling */
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  /* Header Styling */
+  table th {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  table tr:hover {
+    background-color: #f1f1f1;
+  }
+
+  table tr .delete-text{
+    font-size: 14px;
+    color: red;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  table tr .delete-text:hover{ 
+    color:#0c3e8e
+  }
+  
+  

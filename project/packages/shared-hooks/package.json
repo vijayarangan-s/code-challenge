@@ -1,0 +1,8 @@
+{
+    "name": "shared-hooks",
+    "version": "1.0.0",
+    "main": "src/index.js",
+    "dependencies": {
+        "react-redux": "^9.1.2"
+    }
+}
