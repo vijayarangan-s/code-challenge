@@ -2,14 +2,8 @@
 ---
 ## Task 1:
 Assignment: Use the `api` found in `App.tsx` to make a request and fetch a list of all Pokémon.<br>
-### Question 1: How did you manage to fetch the list and what tool did you use?<br>
-### Answer:
-> Tool Used: I used the fetch API to make an HTTP GET request to retrieve the list of Pokémon. The fetch API is a native JavaScript API for making network requests and is widely supported and easy to use for basic API calls.
-
-### Question 2: What steps would you take to future improve this?<br>
-### Answer:
-> I create a custom hook with handling api calls, Pagination,caching mechanisms like state management with reux toolkit and server side rendering.
-
+Question 1: How did you manage to fetch the list and what tool did you use?<br>
+Question 2: What steps would you take to future improve this?<br>
 commit the code as `task-1`<br>
 
 ## Task 2:
