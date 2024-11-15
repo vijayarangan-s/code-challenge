@@ -2,8 +2,78 @@
 ---
 ## Task 1:
 Assignment: Use the `api` found in `App.tsx` to make a request and fetch a list of all Pokémon.<br>
-Question 1: How did you manage to fetch the list and what tool did you use?<br>
-Question 2: What steps would you take to future improve this?<br>
+#### Question 1: How did you manage to fetch the list and what tool did you use?<br>
+#### Answer: 
+ I used the fetch api to call the api and get the list of the pokemon data
+     
+     const fetchData = async () => {
+      dispatch(isloading(true))
+  
+      try {
+        const response = await fetch(`${url}?limit=${perPage}&offset=${offset}`);
+        const {results} = await response.json();
+        
+         dispatch(dataSuccess(results))
+      } catch (err) {
+        dispatch(dataFailure(e?.message || "FAILED to fetch data!!..."))
+      } finally {
+        dispatch(isloading(false))
+      }
+    };
+  
+    useEffect(() => {
+      fetchData();
+    }, [offset]);
+    
+> check the path : packages/shared-hooks/src/useFetchData.js
+ 
+#### Question 2: What steps would you take to future improve this?<br> 
+    
+   
+Create the custom hook and handling the pagination, api call, server side rending.
+
+
+    function useFetchData(url = '', perPage = 10) {
+      const [offset, setOffset] = useState(0);
+      const {data, isLoading: loading, error} = useSelector(state => state?.pokemon)
+      const dispatch = useDispatch()
+  
+    const fetchData = async () => {
+      dispatch(isloading(true))
+  
+      try {
+        const response = await fetch(`${url}?limit=${perPage}&offset=${offset}`);
+        const {results} = await response.json();
+        
+         dispatch(dataSuccess(results))
+      } catch (err) {
+        dispatch(dataFailure(e?.message || "FAILED to fetch data!!..."))
+      } finally {
+        dispatch(isloading(false))
+      }
+    };
+  
+    useEffect(() => {
+      fetchData();
+    }, [offset]);
+  
+    const fetchNextPage = () => {
+      if (!loading) {
+        setOffset((prevOffset) => prevOffset + 1);
+      }
+    };
+
+    const fetchPrevPage = () => {
+        if (!loading) {
+          setOffset((prevOffset) => prevOffset - 1);
+        }
+      }
+  
+    return { data, loading, error, fetchNextPage, fetchPrevPage };
+    }
+    
+    export default useFetchData;
+
 commit the code as `task-1`<br>
 
 ## Task 2:
