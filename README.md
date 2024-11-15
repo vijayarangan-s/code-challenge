@@ -198,14 +198,60 @@ commit the code as `task-3` - https://github.com/vijayarangan-s/code-challenge/t
 
 ## Task 4:
 Assignment: Introduce `redux-toolkit` and store the list of pokémon in the redux store.<br>
-Question 4: What makes the `createSlice` in redux-toolkit difference then A Reducer in redux?<br>
-Question 5: Describe the benefits of immutable code.<br>
+#### Question 4: What makes the `createSlice` in redux-toolkit difference then A Reducer in redux?<br>
+#### Answer:
+   ##### Redux-toolkit
+      - createSlice combines the action and reducer into single object 
+      - Automatically generates action types and action creators.
+   ##### Redux
+      - manual creation of action types, action creators, and the reducer logic separately.
+      - Requires manual immutability handling <br>;
+---
 
-commit the code as `task-4`<br>
+      import { createSlice } from "@reduxjs/toolkit";
+
+      const pokemonSlice = createSlice({
+           name: "pokemon", 
+           initialState: {
+               isLoading:false,
+               data: [],
+               error: null
+           },
+           reducers: {
+               isloading: (state, action) => {
+                   console.log({action})
+                   return {...state, isLoading: action?.payload}
+               },
+               dataSuccess: (state, action) => {
+                   return {...state, data: action?.payload}
+               },
+               dataFailure: (state, action) => {
+                   return {...state, isLoading: false, error: action?.payload}
+               },
+               deletePokemon: (state, action) => {
+                   const filterData = state?.data?.filter(v => v?.name !== action?.payload)
+                   return {...state, data: filterData}
+               }
+           }
+       })
+
+        export const {isloading, dataSuccess, dataFailure, deletePokemon} = pokemonSlice?.actions
+        export default pokemonSlice?.reducer
+      
+#### Question 5: Describe the benefits of immutable code.<br>
+#### Answer:
+  - Predictability: Data cannot change unexpectedly, reducing bugs.
+  - Ease of Debugging: State history is preserved, simplifying error tracing.
+  - Improved Performance: Enables efficient change detection 
+
+commit the code as `task-4` - https://github.com/vijayarangan-s/code-challenge/tree/task4 <br>
 
 ## Task 5:
 Assignment: Create button for each pokémon where an Action will be dispatched to remove the pokémon from the store 
-Question 6: How can you verify the action has been dispatched?
+#### Question 6: How can you verify the action has been dispatched?
+#### Answer:
+ **Redux Devtool** - A browser extension that allows you to inspect every action dispatched and the resulting state changes.<br>
+ https://github.com/vijayarangan-s/code-challenge/tree/task5
 
 ## Task 6:
 ### Question 7: explain the use of `useEffect` hook in React<br>
