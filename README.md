@@ -74,18 +74,127 @@ Create the custom hook and handling the pagination, api call, server side rendin
     
     export default useFetchData;
 
-commit the code as `task-1`<br>
+commit the code as `task-1` - https://github.com/vijayarangan-s/code-challenge/tree/task-1 <br>
 
 ## Task 2:
 Assignment: Parse the list to the `<List />` component and ajust the component to show a list of all pokémon names
 Feel free to create more components in the `/ui` package or in the app if needed 
 
-commit the code as `task-2`<br>
+#### Answer:
+I pass the data into List Components and wrap the table element 
+
+    import React from 'react'
+  
+    export const List = (props: any) => {
+     return (
+       <tr>
+         <td>{props?.name}</td>
+         <td>{props?.url}</td>
+         <td className='delete-text' onClick={() => props.onDeletePokemon(props?.name)}>Delete</td>
+       </tr>
+     )
+    }
+
+commit the code as `task-2` - https://github.com/vijayarangan-s/code-challenge/tree/task2 <br>
 
 ## Task 3:
 Assignment: Style the `<List />` component to display as a grid.
+  
+   
+    .head-container{
+        display: flex;
+        gap: 10px;
+    }
+    
+     /* General Table Styling */
+     table {
+         width: 50%;
+         border-collapse: collapse;
+         margin: 20px 0;
+         font-size: 16px;
+         font-family: Arial, sans-serif;
+         color: #333;
+       }
+     
+     /* Header Styling */
+     table th {
+       background-color: #4CAF50;
+       color: white;
+       padding: 12px;
+       text-align: left;
+       font-weight: bold;
+       border-bottom: 2px solid #ddd;return (
+         <tr>
+           <td>{props?.name}</td>
+           <td>{props?.url}</td>
+           <td className='delete-text' onClick={() => props.onDeletePokemon(props?.name)}>Delete</td>
+         </tr>
+       )
+     }
+     
+     table td {
+       padding: 12px;
+       border-bottom: 1px solid #ddd;
+     }
+     
+     table tr:hover {
+       background-color: #f1f1f1;
+     }
+   
+     table tr .delete-text{
+       font-size: 14px;
+       color: red;
+       text-decoration: underline;
+       cursor: pointer;
+     }
+   
+     table tr .delete-text:hover{ 
+       color:#0c3e8e
+     }
+       margin: 20px 0;
+       font-size: 16px;
+       font-family: Arial, sans-serif;
+       color: #333;
+     }
+     
+     /* Header Styling */
+     table th {
+       background-color: #4CAF50;
+       color: white;
+       padding: 12px;
+       text-align: left;
+       font-weight: bold;
+       border-bottom: 2px solid #ddd;return (
+         <tr>
+           <td>{props?.name}</td>
+           <td>{props?.url}</td>
+           <td className='delete-text' onClick={() => props.onDeletePokemon(props?.name)}>Delete</td>
+         </tr>
+       )
+     }
+     
+     table td {
+       padding: 12px;
+       border-bottom: 1px solid #ddd;
+     }
+     
+     table tr:hover {
+       background-color: #f1f1f1;
+     }
+   
+     table tr .delete-text{
+       font-size: 14px;
+       color: red;
+       text-decoration: underline;
+       cursor: pointer;
+     }
+   
+     table tr .delete-text:hover{ 
+       color:#0c3e8e
+     }
+  
 
-commit the code as `task-3`<br>
+commit the code as `task-3` - https://github.com/vijayarangan-s/code-challenge/tree/task2 <br>
 
 ## Task 4:
 Assignment: Introduce `redux-toolkit` and store the list of pokémon in the redux store.<br>
