@@ -19,6 +19,7 @@ const App = () => {
   <>
     <div>
       <h1>Pokemon list:</h1>
+      
       <div className='head-container'>
         <button onClick={() => fetchPrevPage()}>Prev</button>
         <button onClick={() => fetchNextPage()}>Next</button>
