@@ -14,12 +14,13 @@ const App = () => {
 
 
   if(error) return <>Something went wrong</>
+  
 
   return (
   <>
     <div>
       <h1>Pokemon list:</h1>
-      
+
       <div className='head-container'>
         <button onClick={() => fetchPrevPage()}>Prev</button>
         <button onClick={() => fetchNextPage()}>Next</button>
