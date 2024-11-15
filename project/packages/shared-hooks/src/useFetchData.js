@@ -23,14 +23,11 @@ function useFetchData(url = '', perPage = 10) {
     };
   
     useEffect(() => {
-        console.log("api")
       fetchData();
     }, [offset]);
   
     const fetchNextPage = () => {
-        console.log("sadas")
       if (!loading) {
-        console.log("asdsa")
         setOffset((prevOffset) => prevOffset + 1);
       }
     };
